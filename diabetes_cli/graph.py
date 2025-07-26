@@ -16,7 +16,7 @@ def plot_graph(data_type):
         plt.clear_figure()
         plt.theme("clear") # Use a clear theme for better visibility
         plt.date_form('d/m/Y H:M')
-        plt.plot(x, y, marker='dot', color='blue')
+        plt.plot(x, y, marker='dot')#, color='blue')
         plt.title(f"{data_type.replace('_', ' ').title()} Over Time")
         plt.xlabel("Time")
         plt.ylabel("Value")
