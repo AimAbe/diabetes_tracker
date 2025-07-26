@@ -3,7 +3,7 @@ import csv
 from datetime import datetime
 
 DATA_FILE = "storage.csv"
-HEADER = ["Date", "Type", "Kind", "Value", "Time", "Note"]
+HEADER = ["Date", "Type", "Kind", "Value", "Time", "Note"] # Header for the CSV file
 
 def ensure_header():
     if not os.path.isfile(DATA_FILE) or os.path.getsize(DATA_FILE) == 0:
@@ -13,8 +13,8 @@ def ensure_header():
 
 def log_blood_sugar(value, time=None, note=""):
     ensure_header()
-    time = time or datetime.now().strftime("%H:%M")
-    date = datetime.now().date()
+    time = time or datetime.now().strftime("%H:%M") # Default to current time if not provided
+    date = datetime.now().date() # Default to current date if not provided
     with open(DATA_FILE, "a", newline="") as file:
         writer = csv.writer(file)
         writer.writerow([date, "blood_sugar", "", value, time, note])

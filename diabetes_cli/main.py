@@ -5,6 +5,7 @@ from graph import plot_graph
 
 def run_menu():
     while True:
+        # Display the menu
         print("\n🩺 Welcome to the Diabetes Tracker CLI\n")
         print("1. Log blood sugar")
         print("2. Log insulin")
@@ -25,7 +26,7 @@ def run_menu():
                 continue
             time = input("Enter time (HH:MM): ")
             note = input("Enter a note (optional): ")
-            log_blood_sugar(value, time, note)
+            log_blood_sugar(value, time, note) # Log the blood sugar value
 
         elif choice == "2":
             kind = input("Enter insulin type (bolus/basal): ")
@@ -39,7 +40,7 @@ def run_menu():
                 continue
             time = input("Enter time (HH:MM): ")
             note = input("Enter a note (optional): ")
-            log_insulin(kind, amount, time, note)
+            log_insulin(kind, amount, time, note) # Log the insulin dose 
 
         elif choice == "3":
             show_stats()
@@ -58,19 +59,19 @@ def parse_cli_args(args):
     if not args or args[0] in ("--help", "help"):
         print("Usage:")
         print("  blood-sugar --value <float> --time <HH:MM> [--note <text>]")
-        print("      Log a blood sugar value. Example:")
-        print("      python main.py blood-sugar --value 120 --time 08:30 --note \"Fasting\"")
+        print("    Log a blood sugar value. Example:")
+        print("    python main.py blood-sugar --value 120 --time 08:30 --note \"Fasting\"")
         print()
         print("  insulin --kind <bolus|basal> --amount <float> --time <HH:MM> [--note <text>]")
-        print("      Log an insulin dose. Example:")
-        print("      python main.py insulin --kind bolus --amount 5 --time 12:00 --note \"Lunch\"")
+        print("    Log an insulin dose. Example:")
+        print("    python main.py insulin --kind bolus --amount 5 --time 12:00 --note \"Lunch\"")
         print()
         print("  stats")
-        print("      Show all logged data in a table.")
+        print("    Show all logged data in a table.")
         print()
         print("  graph --type <blood_sugar|insulin>")
-        print("      Show a graph for the selected type. Example:")
-        print("      python main.py graph --type blood_sugar")
+        print("    Show a graph for the selected type. Example:")
+        print("    python main.py graph --type blood_sugar")
         return
     command = args[0]
     try:
