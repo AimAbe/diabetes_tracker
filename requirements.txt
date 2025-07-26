@@ -1,1 +1,4 @@
-##requirements.txt
+pandas
+matplotlib
+tabulate
+plotext
