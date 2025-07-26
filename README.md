@@ -18,50 +18,68 @@ A simple command-line tool to log and visualize blood sugar and insulin data.
   pip install -r requirements.txt
   ```
 
-## Usage
+## Installation and Usage
 
-### Interactive Menu
+### 1. Clone the Repository
 
-Run:
+```sh
+git clone https://github.com/aimabe/diabetes_tracker.git
+cd diabetes_tracker
+```
+
+### 2. Create and Activate a Virtual Environment
+
+```sh
+python3 -m venv venv
+source venv/bin/activate
+```
+
+### 3. Install Dependencies
+
+```sh
+pip install -r requirements.txt
+```
+
+### 4. Run the Application
+
+#### Interactive Menu
+
 ```sh
 python3 main.py
 ```
-You will see:
-```
-1. Log blood sugar
-2. Log insulin
-3. View stats
-4. View blood sugar graph
-5. Exit
-```
-Follow the prompts to log data or view stats/graphs.
+Follow the prompts to log blood sugar, log insulin, view stats, or plot graphs.
 
-### Command Line Arguments
+#### Command Line Usage
 
-#### Log blood sugar:
-```sh
-python3 main.py blood-sugar --value 120 --time 08:30 --note "Fasting"
-```
+- **Log blood sugar:**
+  ```sh
+  python3 main.py blood-sugar --value 120 --time 08:30 --note "Fasting"
+  ```
 
-#### Log insulin:
-```sh
-python3 main.py insulin --kind bolus --amount 5 --time 12:00 --note "Lunch"
-```
+- **Log insulin:**
+  ```sh
+  python3 main.py insulin --kind bolus --amount 5 --time 12:00 --note "Lunch"
+  ```
 
-#### Show all logs:
-```sh
-python3 main.py stats
-```
+- **Show all logs:**
+  ```sh
+  python3 main.py stats
+  ```
 
-#### Show a graph:
-```sh
-python3 main.py graph --type blood_sugar
-python3 main.py graph --type insulin
-```
+- **Show a graph:**
+  ```sh
+  python3 main.py graph --type blood_sugar
+  python3 main.py graph --type insulin
+  ```
 
-## Data Storage
+### 5. Data Storage
 
-- All data is stored in `storage.csv` in the project directory.
+All logs are saved in `storage.csv` in the project directory.
+
+---
+
+**Tip:**  
+Make sure your virtual environment is activated each time you run the application or install new dependencies.
 
 ## Example Output
 
