@@ -40,12 +40,28 @@ source venv/bin/activate
 pip install -r requirements.txt
 ```
 
+**OR install as a package using `setup.py`:**
+
+```sh
+pip install .
+```
+
+This will install the app and its dependencies. You can then run the CLI using:
+
+```sh
+diabetes-tracker
+```
+
 ### 4. Run the Application
 
 #### Interactive Menu
 
 ```sh
 python3 main.py
+```
+or, if installed as a package:
+```sh
+diabetes-tracker
 ```
 Follow the prompts to log blood sugar, log insulin, view stats, or plot graphs.
 
@@ -54,22 +70,31 @@ Follow the prompts to log blood sugar, log insulin, view stats, or plot graphs.
 - **Log blood sugar:**
   ```sh
   python3 main.py blood-sugar --value 120 --time 08:30 --note "Fasting"
+  # or
+  diabetes-tracker blood-sugar --value 120 --time 08:30 --note "Fasting"
   ```
 
 - **Log insulin:**
   ```sh
   python3 main.py insulin --kind bolus --amount 5 --time 12:00 --note "Lunch"
+  # or
+  diabetes-tracker insulin --kind bolus --amount 5 --time 12:00 --note "Lunch"
   ```
 
 - **Show all logs:**
   ```sh
   python3 main.py stats
+  # or
+  diabetes-tracker stats
   ```
 
 - **Show a graph:**
   ```sh
   python3 main.py graph --type blood_sugar
   python3 main.py graph --type insulin
+  # or
+  diabetes-tracker graph --type blood_sugar
+  diabetes-tracker graph --type insulin
   ```
 
 ### 5. Data Storage
