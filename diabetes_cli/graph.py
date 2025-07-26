@@ -14,11 +14,13 @@ def plot_graph(data_type):
         x = [t.strftime("%d/%m/%Y %H:%M") for t in timestamps]
         y = data["Value"].astype(float).tolist()
         plt.clear_figure()
-        plt.date_form('d/m/Y H:M')  # Set the date format for plotext
-        plt.plot(x, y, marker='dot')
+        plt.theme("clear") # Use a clear theme for better visibility
+        plt.date_form('d/m/Y H:M')
+        plt.plot(x, y, marker='dot', color='blue')
         plt.title(f"{data_type.replace('_', ' ').title()} Over Time")
         plt.xlabel("Time")
         plt.ylabel("Value")
+        plt.grid(False)  # Remove grid for a cleaner look
         plt.show()
     except FileNotFoundError:
         print("No data to plot.")
