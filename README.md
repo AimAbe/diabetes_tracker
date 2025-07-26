@@ -133,18 +133,40 @@ When you run a graph command, an ASCII graph will be displayed directly in your 
 
 ## Future Addition:
 
+- Log Meals
+- Log Activity
 - Adding Unit tests
 - Add exporting
 - Add printing
 - Add filtering of data by date, type
+- Advanced Analytics
+  - Mean Glucose Value
+  - Percentage time spent in 
+      - hypoglycemia (BG < 70 mg/dL)
+      - target range ( 70 < BG < 180)
+      - hyperglycemia (BG > 180)
+  - Statistical Analysis
+    - Time-based patterns (time of day with highest/lowest readings)
+    - Correlation between insulin doses and subsequent blood sugar readings
+    - Day-of-week analysis to identify weekend vs weekday patterns
+    - Standard deviation and variability metrics for glucose control assessment
+    - Moving averages to show trends over different timeframes (7-day, 14-day, 30-day)
+  - Predictive Features
+    - Glucose prediction based on meal content, insulin timing, and historical patterns
+    - Insulin sensitivity factor calculations
+    - Carb ratio effectiveness analysis
+  - Reporting
+    - Time in range calculations (% of readings within target glucose range)
+    - A1C estimations based on average glucose readings
+    - Exportable reports for healthcare provider appointments
+    - Monthly/quarterly summary statistics
+  - Advanced Visualizations
+    - Heatmaps showing glucose patterns by time of day and day of week
+    - Overlay graphs of insulin doses with blood glucose responses
+    - Box and whisker plots to show glucose variability by time period
+    - Ambulatory glucose profile (AGP) style reports
 - Pull in data from Continuous Glucose Monitor (CGM)
-- Process CGM data
-- Analysis
-    - Mean Glucose Value
-    - Percentage time spent in 
-        - hypoglycemia (BG < 70 mg/dL)
-        - target range ( 70 < BG < 180)
-        - hyperglycemia (BG > 180)
+  - Process CGM data
 - Move from using CSV to a database (SQLite or PostgreSQL)
 - Transitioning to a Web App
     - Choose a Web Framework (Flask or Django)
